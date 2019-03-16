@@ -44,8 +44,10 @@ def hello(request):
     #Fetching comments body
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
+    print(body)
 
     #Fetching comments url
+   
     comments_url = body['issue']['comments_url']
 
     
@@ -61,6 +63,15 @@ def hello(request):
 
     print(comments_list)    
 
+    temp=makeComment()
 
     #print success if no error occurs
     return HttpResponse("success")
+
+
+def makeComment():
+    headers = {'Authorization': 'token ' + 'b7ffcd5a14f423bbef657461bf3a6dd2544b7247'}
+    github_url = "https://api.github.com/repos/jay24rajput/Pearl-Programs/issues/2/comments"
+    data = json.dumps({'body':'we will rebase'})
+    r = requests.post(github_url, data=data,headers=headers)
+    return ""
