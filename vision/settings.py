@@ -119,3 +119,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GITHUB_WEBHOOK_KEY = '61bBuQXmzsYVSJCwhfGZsZqDAxyVkxA2msEId8i5cetfpcdzPC'
