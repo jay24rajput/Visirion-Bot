@@ -30,20 +30,6 @@ def hello(request):
     if header_signature is None:
         return HttpResponseForbidden('Permission denied.')
 
-
-    body_unicode = request.body.decode('utf-8')
-    body = json.loads(body_unicode)
-
-    comments_url = body['issue']['comments_url']
-
-    
-    request_data = requests.get(url = comments_url,params=None)
-
-    comment_json= request_data.json()
-
-    for key in comment_json:
-        print(key['body'])
-
     #verifing signatures
 
     sha_name, signature = header_signature.split('=')
@@ -69,8 +55,11 @@ def hello(request):
     comment_json= request_data.json()
 
     #Fetching comment contents
+    comments_list=[]
     for key in comment_json:
-        print(key['body'])
+        comments_list.append(key['body'])
+
+    print(comments_list)    
 
 
     #print success if no error occurs
