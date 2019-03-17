@@ -1,5 +1,7 @@
-# Visirion-Bot
-
+<p align="center">
+  <img width=300px src="https://cdn1.iconfinder.com/data/icons/robo-advisor/500/robo-advisor-ai-cyborg-Bot-robot_9-512.png">
+ </p>
+<h1 align="center">Visirion Bot</h1>
 ## Proposed Solution
 This app is used for automated merge, rebase, squashing, fast forwarding of pull requests on version control systems, like Github. <br>
 It acts as a chatbot to make it easy for new developers to manage large codebases, by enabling them to use basic commands on the Github comments section.
@@ -47,3 +49,14 @@ A nice, clean, straight line. This makes it sooooo much nicer! <br>
 ### This is how the Visirion Bot performs Rebasing
 
 ![Rebase%20Message](data/Rebase%20Messge.png) <br>
+
+## Future Scope
+- Can be integrated into a github app by providing the required urls.
+- We can integrate the project with [Chatter Bot](https://github.com/gunthercox/ChatterBot) APIS to add more functionality to **Visirion**
+- Different Scenarios for merge conflicts, force pushes, etc. can also be incorporated.
+
+## Contributors
+- Jay Rajput: [jay24rajput](https://github.com/jay24rajput)
+- Sladyn Nunes: [sladyn98](https://github.com/sladyn98)
+- Akhil varyani: [av06](https://github.com/av06)
+- Manoj Ochani: [MANOJ-OCHANEY](https://github.com/MANOJ-OCHANEY)
