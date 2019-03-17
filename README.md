@@ -61,4 +61,4 @@ A nice, clean, straight line. This makes it sooooo much nicer! <br>
 - Jay Rajput: [jay24rajput](https://github.com/jay24rajput)
 - Sladyn Nunes: [sladyn98](https://github.com/sladyn98)
 - Akhil varyani: [av06](https://github.com/av06)
-- Manoj Ochani: [MANOJ-OCHANEY](https://github.com/MANOJ-OCHANEY)
+- Manoj Ochaney: [MANOJ-OCHANEY](https://github.com/MANOJ-OCHANEY)
