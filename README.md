@@ -26,4 +26,24 @@ It acts as a chatbot to make it easy for new developers to manage large codebase
 [Webhooks for github](https://developer.github.com/webhooks/creating/)
 - Enter the **http** address from the ngrok: <br>
 eg: ```http://6712e41e.ngrok.io``` <br>
-- Generate and Enter the secret key<br>
+- Generate and Enter the secret key <br>
+```
+$ python manage.py shell
+   from django.utils.crypto import get_random_string
+   get_random_string(50)
+```
+- Update webhook and deliver the request and check the response.
+
+## Perfoming Rebase
+When not doing a fast forward merge, your git history looks like this: <br>
+![bad-history](data/bad-history.png)
+<br>
+
+Chaos. This makes it pretty difficult to figure out what code is where and when and how it got there.
+When you rebase and only do fast forward merges, you get a git history that looks like this:<br>
+![clean-history](data/clean-history.png) <br>
+A nice, clean, straight line. This makes it sooooo much nicer! <br>
+
+### This is how the Visirion Bot performs Rebasing
+
+![Rebase%20Message](data/Rebase%20Messge.png) <br>
