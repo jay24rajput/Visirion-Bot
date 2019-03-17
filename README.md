@@ -2,6 +2,8 @@
   <img width=300px src="https://cdn1.iconfinder.com/data/icons/robo-advisor/500/robo-advisor-ai-cyborg-Bot-robot_9-512.png">
  </p>
 <h1 align="center">Visirion Bot</h1>
+<br>
+
 ## Proposed Solution
 This app is used for automated merge, rebase, squashing, fast forwarding of pull requests on version control systems, like Github. <br>
 It acts as a chatbot to make it easy for new developers to manage large codebases, by enabling them to use basic commands on the Github comments section.
