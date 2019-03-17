@@ -1,5 +1,6 @@
 import hmac
 import json
+import re
 from hashlib import sha1
 
 from django.conf import settings
@@ -10,10 +11,12 @@ from django.utils.encoding import force_bytes
 
 import requests
 from ipaddress import ip_address, ip_network
-
+flag=0
+ACCESS_TOKEN='20ec21403f1028a7ca8bb77852f2169c5b5bc467'
 
 @csrf_exempt
 def hello(request):
+    global flag
     # Verify if request came from GitHub
     forwarded_for = u'{}'.format(request.META.get('HTTP_X_FORWARDED_FOR'))
     client_ip_address = ip_address(forwarded_for)
@@ -44,11 +47,12 @@ def hello(request):
     #Fetching comments body
     body_unicode = request.body.decode('utf-8')
     body = json.loads(body_unicode)
-    print(body)
+    # print(body)
 
     #Fetching comments url
    
     comments_url = body['issue']['comments_url']
+    print(comments_url)
 
     
     request_data = requests.get(url = comments_url,params=None)
@@ -61,17 +65,23 @@ def hello(request):
     for key in comment_json:
         comments_list.append(key['body'])
 
-    print(comments_list)    
 
-    temp=makeComment()
+    pattern='@visirion ([a-z]*)$'
+    lastComment=comments_list[-1]
+    ans=re.match(pattern,lastComment)
+    print(lastComment)
+    if ans!= None:
+        temp=makeComment(comments_url)
+    
+    # temp=makeComment()
+
 
     #print success if no error occurs
     return HttpResponse("success")
 
 
-def makeComment():
-    headers = {'Authorization': 'token ' + 'b7ffcd5a14f423bbef657461bf3a6dd2544b7247'}
-    github_url = "https://api.github.com/repos/jay24rajput/Pearl-Programs/issues/2/comments"
-    data = json.dumps({'body':'we will rebase'})
+def makeComment(github_url):
+    headers = {'Authorization': 'token ' + ACCESS_TOKEN}
+    data = json.dumps({'body':'Rebase is in progress. Kindly do not push changes while rebase is being performed :warning:'})
     r = requests.post(github_url, data=data,headers=headers)
     return ""

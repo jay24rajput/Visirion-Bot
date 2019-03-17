@@ -11,13 +11,16 @@ def main():
     #
     # User Input
     #
-    username = input('Username: ')
-    password = getpass.getpass('Password: ')
+    username = input('Github username: ')
+    password = getpass.getpass('Github password: ')
+    note = input('Note (optional): ')
     #
     # Compose Request
     #
     url = urljoin(GITHUB_API, 'authorizations')
     payload = {}
+    if note:
+        payload['note'] = note
     res = requests.post(
         url,
         auth = (username, password),
@@ -28,7 +31,7 @@ def main():
     #
     j = json.loads(res.text)
     token = j['token']
-    print('Your new token is',token)
+    print('Token', token)
 
 if __name__ == '__main__':
     main()
