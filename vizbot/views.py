@@ -50,9 +50,24 @@ def hello(request):
     # print(body)
 
     #Fetching comments url
+
+    pull_request_url= body['issue']['pull_request']['url']
+    request_branch_data = requests.get(url = pull_request_url,params=None)
+    request_branch_data=request_branch_data.json()
+    
+    #---------Head Branch---------------#
+    head_branch=request_branch_data['head']['ref']
+    
+    head_url = request_branch_data['head']['repo']['html_url']
+    base_url = request_branch_data['base']['repo']['html_url']
+
+    #fetching the forked repo name from the head url
+    head_repository_name=head_url.split('/')[-1]
+    print(head_repository_name)
    
     comments_url = body['issue']['comments_url']
-    print(comments_url)
+
+    # print(comments_url)
 
     
     request_data = requests.get(url = comments_url,params=None)
