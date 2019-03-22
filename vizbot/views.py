@@ -12,7 +12,7 @@ from django.utils.encoding import force_bytes
 import requests
 from ipaddress import ip_address, ip_network
 flag=0
-ACCESS_TOKEN='20ec21403f1028a7ca8bb77852f2169c5b5bc467'
+ACCESS_TOKEN=''
 
 @csrf_exempt
 def hello(request):
